@@ -1,0 +1,15 @@
+services:
+  backend:
+    build:
+      context: backend
+      dockerfile: Dockerfile
+      target: development
+    image: leoalmeida/backend
+    ports:
+      - 8000:8000
+    stdin_open: true
+    volumes:
+      - ./backend:/usr/src/app
+      - /usr/src/app/node_modules
+    restart: always
+    
